@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{1E55E413-927B-4BDB-AFF3-9431CD580B1D}</ProjectGuid>
+    <RootNamespace>EL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>EL</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>../src/depositories;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <OutDir>.\output\debug\</OutDir>
+    <IntDir>.\intermediates\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>../src/depositories;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IntDir>../$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>../$(ProjectName)</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)x86\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)out\$(ProjectName)\$(Configuration)\</IntDir>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>../src/depositories;$(IncludePath)</IncludePath>
+    <TargetName>bin</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)depository;$(IncludePath)</IncludePath>
+    <TargetName>x64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;/std:c++latest;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;/std:c++latest;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_HAS_STD_BYTE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <StackReserveSize>
+      </StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <StringPooling>false</StringPooling>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <AdditionalOptions>/ignore:4099 /LTCG:off %(AdditionalOptions)</AdditionalOptions>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bot\bot.cpp" />
+    <ClCompile Include="depository\b64\b64.cpp" />
+    <ClCompile Include="depository\crc32\crc32.c" />
+    <ClCompile Include="depository\json\json_reader.cpp" />
+    <ClCompile Include="depository\json\json_value.cpp" />
+    <ClCompile Include="depository\json\json_writer.cpp" />
+    <ClCompile Include="depository\minizip\ioapi.c" />
+    <ClCompile Include="depository\minizip\ioapi_buf.c" />
+    <ClCompile Include="depository\minizip\ioapi_mem.c" />
+    <ClCompile Include="depository\minizip\iowin32.c" />
+    <ClCompile Include="depository\minizip\unzip.c" />
+    <ClCompile Include="depository\minizip\zip.c" />
+    <ClCompile Include="depository\zlib\adler32.c" />
+    <ClCompile Include="depository\zlib\compress.c" />
+    <ClCompile Include="depository\zlib\deflate.c" />
+    <ClCompile Include="depository\zlib\gzclose.c" />
+    <ClCompile Include="depository\zlib\gzlib.c" />
+    <ClCompile Include="depository\zlib\gzread.c" />
+    <ClCompile Include="depository\zlib\gzwrite.c" />
+    <ClCompile Include="depository\zlib\infback.c" />
+    <ClCompile Include="depository\zlib\inffast.c" />
+    <ClCompile Include="depository\zlib\inflate.c" />
+    <ClCompile Include="depository\zlib\inftrees.c" />
+    <ClCompile Include="depository\zlib\trees.c" />
+    <ClCompile Include="depository\zlib\uncompr.c" />
+    <ClCompile Include="depository\zlib\zutil.c" />
+    <ClCompile Include="module\module.cpp" />
+    <ClCompile Include="security\security.cpp" />
+    <ClCompile Include="utilities\crt\crt.cpp" />
+    <ClCompile Include="utilities\directories\directories.cpp" />
+    <ClCompile Include="utilities\globals\globals.cpp" />
+    <ClCompile Include="utilities\zip_handle\zip_handle.cpp" />
+    <ClCompile Include="work\browsers\browsers.cpp" />
+    <ClCompile Include="work\gaming\gaming.cpp" />
+    <ClCompile Include="work\grabbing\grabbing.cpp" />
+    <ClCompile Include="work\screenshot\screenshot.cpp" />
+    <ClCompile Include="work\system_data\system_data.cpp" />
+    <ClCompile Include="work\utilities\utilities.cpp" />
+    <ClCompile Include="work\telegram\telegram.cpp" />
+    <ClCompile Include="work\wallets\wallets.cpp" />
+    <ClCompile Include="work\geolocation\geolocation.cpp" />
+    <ClCompile Include="utilities\tools\tools.cpp" />
+    <ClCompile Include="winapi\winapi.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bot\bot.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="depository\b64\b64.h" />
+    <ClInclude Include="depository\crc32\crc32.h" />
+    <ClInclude Include="depository\curl\curl.h" />
+    <ClInclude Include="depository\curl\curlver.h" />
+    <ClInclude Include="depository\curl\easy.h" />
+    <ClInclude Include="depository\curl\mprintf.h" />
+    <ClInclude Include="depository\curl\multi.h" />
+    <ClInclude Include="depository\curl\stdcheaders.h" />
+    <ClInclude Include="depository\curl\system.h" />
+    <ClInclude Include="depository\curl\typecheck-gcc.h" />
+    <ClInclude Include="depository\curl\urlapi.h" />
+    <ClInclude Include="depository\json\allocator.h" />
+    <ClInclude Include="depository\json\assertions.h" />
+    <ClInclude Include="depository\json\config.h" />
+    <ClInclude Include="depository\json\forwards.h" />
+    <ClInclude Include="depository\json\json.h" />
+    <ClInclude Include="depository\json\json_features.h" />
+    <ClInclude Include="depository\json\json_tool.h" />
+    <ClInclude Include="depository\json\reader.h" />
+    <ClInclude Include="depository\json\value.h" />
+    <ClInclude Include="depository\json\version.h" />
+    <ClInclude Include="depository\json\writer.h" />
+    <ClInclude Include="depository\minizip\crypt.h" />
+    <ClInclude Include="depository\minizip\ioapi.h" />
+    <ClInclude Include="depository\minizip\ioapi_buf.h" />
+    <ClInclude Include="depository\minizip\ioapi_mem.h" />
+    <ClInclude Include="depository\minizip\iowin32.h" />
+    <ClInclude Include="depository\minizip\unzip.h" />
+    <ClInclude Include="depository\minizip\zip.h" />
+    <ClInclude Include="depository\plusaes\plusaes.hpp" />
+    <ClInclude Include="depository\plusaes\plusaes_wrapper.hpp" />
+    <ClInclude Include="depository\sqlite3\sqlite3.h" />
+    <ClInclude Include="depository\zlib\deflate.h" />
+    <ClInclude Include="depository\zlib\gzguts.h" />
+    <ClInclude Include="depository\zlib\inffast.h" />
+    <ClInclude Include="depository\zlib\inffixed.h" />
+    <ClInclude Include="depository\zlib\inflate.h" />
+    <ClInclude Include="depository\zlib\inftrees.h" />
+    <ClInclude Include="depository\zlib\trees.h" />
+    <ClInclude Include="depository\zlib\zconf.h" />
+    <ClInclude Include="depository\zlib\zlib.h" />
+    <ClInclude Include="depository\zlib\zutil.h" />
+    <ClInclude Include="lambda.h" />
+    <ClInclude Include="module\module.h" />
+    <ClInclude Include="security\security.h" />
+    <ClInclude Include="win.h" />
+    <ClInclude Include="utilities\crt\crt.h" />
+    <ClInclude Include="utilities\directories\directories.h" />
+    <ClInclude Include="utilities\globals\globals.h" />
+    <ClInclude Include="utilities\zip_handle\zip_handle.h" />
+    <ClInclude Include="work\browsers\browsers.h" />
+    <ClInclude Include="work\gaming\gaming.h" />
+    <ClInclude Include="work\grabbing\grabbing.h" />
+    <ClInclude Include="work\screenshot\screenshot.h" />
+    <ClInclude Include="work\system_data\system_data.h" />
+    <ClInclude Include="work\utilities\utilities.h" />
+    <ClInclude Include="work\telegram\telegram.h" />
+    <ClInclude Include="work\wallets\wallets.h" />
+    <ClInclude Include="work\geolocation\geolocation.h" />
+    <ClInclude Include="utilities\xor\xor.h" />
+    <ClInclude Include="utilities\tools\tools.h" />
+    <ClInclude Include="winapi\winapi.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="depository\json\json_valueiterator.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
